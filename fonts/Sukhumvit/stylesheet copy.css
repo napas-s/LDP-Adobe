@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Sukhumvit Set';
+    src: url('SukhumvitSet-Text.eot');
+    src: url('SukhumvitSet-Text.eot?#iefix') format('embedded-opentype'),
+        url('SukhumvitSet-Text.woff2') format('woff2'),
+        url('SukhumvitSet-Text.woff') format('woff'),
+        url('SukhumvitSet-Text.ttf') format('truetype'),
+        url('SukhumvitSet-Text.svg#SukhumvitSet-Text') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
