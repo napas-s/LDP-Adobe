@@ -44,11 +44,11 @@
 	<meta property="og:type" content="article"/>
 
 	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-P9T492V');</script>
+	})(window,document,'script','dataLayer','GTM-P9T492V');</script> -->
 	<!-- End Google Tag Manager -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -478,7 +478,21 @@
 		});
 	</script>
 	
-	
+	<!-- Start of LiveChat (www.livechatinc.com) code -->
+	<!-- <script type="text/javascript">
+	window.__lc = window.__lc || {};
+	window.__lc.license = 10843677;
+	(function() {
+		var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+		lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+	})();
+	</script>
+	<noscript>
+	<a href="https://www.livechatinc.com/chat-with/10843677/" rel="nofollow">Chat with us</a>,
+	powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+	</noscript> -->
+	<!-- End of LiveChat code -->
 
 
 </body>
