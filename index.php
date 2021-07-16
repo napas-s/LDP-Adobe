@@ -173,7 +173,7 @@
 							</div>
 						</div>
 						<div>
-							<form id="request-quotation" method="post" action="/register/do.php">
+							<form id="request-quotation" name="request-quotation" method="post" action="/register/do.php" onsubmit="return validateForm(event)">
 								<div class="bg-qu">
 									<h3 class="title-center c-white">รับข้อเสนอสุดพิเศษ</h3>
 									
@@ -181,13 +181,15 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<small>ชื่อผู้ติดต่อ *</small>
-												<input type="text" class="form-control" placeholder="ชื่อ" id="firstname" name="firstname" required>
+												<input type="text" class="form-control" placeholder="ชื่อ" id="firstname" name="firstname" >
+												<small id="er-firstname" style="color: FFF;"></small>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<small>ตำแหน่ง *</small>
-												<input type="text" class="form-control" placeholder="ตำแหน่ง" id="designation" name="designation" required>
+												<input type="text" class="form-control" placeholder="ตำแหน่ง" id="designation" name="designation" >
+												<small id="er-designation" style="color: FFF;"></small>
 											</div>
 										</div>
 										<div class="col-md-12">
@@ -199,13 +201,15 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<small>เบอร์โทรศัพท์ *</small>
-												<input type="tel" class="form-control" placeholder="เบอร์ติดต่อ *" id="phone" name="mobile" required>
+												<input type="tel" class="form-control" placeholder="เบอร์ติดต่อ *" id="phone" name="mobile" >
+												<small id="er-phone" style="color: FFF;"></small>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<small>อีเมล *</small>
-												<input type="text" class="form-control" placeholder="อีเมล *" id="email" name="email" required>
+												<input type="text" class="form-control" placeholder="อีเมล *" id="email" name="email" >
+												<small id="er-email" style="color: FFF;"></small>
 											</div>
 										</div>
 										<div class="col-md-12">
@@ -451,10 +455,115 @@
 	<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
 
 	<script>
+
+		function validateForm()
+		{
+			if(document.all.firstname.value=='')
+			{
+				$('#er-firstname').html('กรุณากรุณากรอกข้อมูล');
+				document.all.firstname.focus();
+				return false;
+			}
+			if(document.all.designation.value=='')
+			{
+				$('#er-designation').html('กรุณากรอกข้อมูล');
+				document.all.designation.focus();
+				return false;
+			}
+			if(document.all.phone.value=='')
+			{
+				$('#er-phone').html('กรุณากรอกข้อมูล');
+				document.all.phone.focus();
+				return false;
+			}
+			if(document.all.email.value=='')
+			{
+				$('#er-email').html('กรุณากรอกข้อมูล');
+				document.all.email.focus();
+				return false;
+			}
+
+			document.getElementById("submit").disabled = true;
+			return true;
+		}
+
+		/********  input disble button  ********/
+
+		$('#submit').click( function(){
+			document.getElementById("request-quotation").submit();
+			document.getElementById("submit").disabled = true;
+		})
+		$('#firstname').keypress(
+			function(){
+				$('#er-firstname').html('');
+				document.getElementById("submit").disabled = false;
+			}
+		);
+		$('#designation').keypress(
+			function(){
+				$('#er-designation').html('');
+				document.getElementById("submit").disabled = false;
+			}
+		);
+		$('#company').keypress(
+			function(){
+				$('#er-company').html('');
+				document.getElementById("submit").disabled = false;
+			}
+		);
+		$('#phone').keypress(
+			function(){
+				$('#er-phone').html('');
+				document.getElementById("submit").disabled = false;
+			}
+		);
+		$('#email').keypress(
+			function(){
+				$('#er-email').html('');
+				document.getElementById("submit").disabled = false;
+			}
+		);
+		$('#comment').keypress( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox1').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox2').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox11').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox12').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox13').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox14').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox15').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox16').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox17').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#inlineCheckbox18').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+		$('#select-all').click( function(){
+			document.getElementById("submit").disabled = false;
+		})
+
 		/********  English Company  ********/
     	$('#company').attr("autocomplete","off");
 		var str_current_value = $('#company').val();
-			
+
 		$('#company').keyup(function(event){
 
 			var orgi_text="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890;:<>?._-, ~#&()@!'*+}{][$%^/|=\"";
